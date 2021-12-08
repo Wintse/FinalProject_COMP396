@@ -397,6 +397,7 @@ GameObject:
   - component: {fileID: 114352737457015978}
   - component: {fileID: 114599807935355378}
   - component: {fileID: 494451702622158345}
+  - component: {fileID: 54471648972752866}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -571,6 +572,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 100
   healthBar: {fileID: 2075123060}
+--- !u!54 &54471648972752866
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6888734016520140071}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &6888734017627477894
 GameObject:
   m_ObjectHideFlags: 0

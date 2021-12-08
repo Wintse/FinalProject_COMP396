@@ -28,17 +28,20 @@ public class CameraController : MonoBehaviour
         //playerOnTop = playerController.onVertPlatform; (duplicating boolean)
         playersArray = GameObject.FindGameObjectsWithTag("Player");
 
+        
         foreach (GameObject player in playersArray)
         {
-            if(player.name == "Player(Clone)")
+            
+            if(player.name == "Frog(Clone)")
             {
                 playerController = player.GetComponent<PlayerController>();
-                Debug.Log(playerController.mainPlayer);
+                //Debug.Log(playerController.mainPlayer);
 
                 var vcam = GetComponent<CinemachineFreeLook>();
+                Debug.Log(playerController.mainPlayer);
                 if (playerController.mainPlayer)
                 {
-                    lookAt = player.transform.GetChild(4).gameObject;
+                    lookAt = player.transform.GetChild(7).gameObject;
                     vcam.GetComponent<Cinemachine.CinemachineFreeLook>().Follow = player.transform;
                     vcam.GetComponent<Cinemachine.CinemachineFreeLook>().LookAt = lookAt.transform;
 

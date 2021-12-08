@@ -1,36 +1,26 @@
 fileFormatVersion: 2
-guid: 5e0361393d7b4b845b6ff21456a281f6
+guid: 0afc461357f236f419e428b6e6fd9b4e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Camera
-    100002: Empty
-    100004: Light
-    100006: //RootNode
-    100008: Roundcube
-    100010: Roundcube.001
-    100012: Roundcube.002
-    400000: Camera
-    400002: Empty
-    400004: Light
-    400006: //RootNode
-    400008: Roundcube
-    400010: Roundcube.001
-    400012: Roundcube.002
-    2000000: Camera
-    2100000: No Name
-    2300000: Roundcube
-    2300002: Roundcube.001
-    2300004: Roundcube.002
-    3300000: Roundcube
-    3300002: Roundcube.001
-    3300004: Roundcube.002
-    4300000: Roundcube
-    4300002: Roundcube.001
-    4300004: Roundcube.002
-    9500000: //RootNode
-    10800000: Light
-    2186277476908879412: ImportLogs
+    100000: Body
+    100002: Head
+    100004: //RootNode
+    100006: Shirt
+    400000: Body
+    400002: Head
+    400004: //RootNode
+    400006: Shirt
+    2100000: player_material
+    2300000: Body
+    2300002: Head
+    2300004: Shirt
+    3300000: Body
+    3300002: Head
+    3300004: Shirt
+    4300000: Head
+    4300002: Body
+    4300004: Shirt
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -84,7 +74,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -111,7 +101,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

@@ -40,13 +40,13 @@ public class NPCController : NetworkBehaviour
         switch (enemyType)
         {
             case EnemyType.x:
-                Debug.Log(enemyType);
+                //Debug.Log(enemyType);
                 break;
             case EnemyType.y:
-                Debug.Log(enemyType);
+                //Debug.Log(enemyType);
                 break;
             case EnemyType.z:
-                Debug.Log(enemyType);
+                //Debug.Log(enemyType);
                 break;
             default:
                 break;

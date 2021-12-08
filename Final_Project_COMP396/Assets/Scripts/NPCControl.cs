@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class NPCControl : MonoBehaviour
 {
     public GameObject player;
@@ -58,12 +60,14 @@ public class FollowPathState : FSMState
         if (Physics.Raycast(npc.transform.position, npc.transform.forward, out hit, 15F))
         {
             if (hit.transform.gameObject.tag == "Player")
+                Debug.Log("hit player");
                 npc.GetComponent<NPCControl>().SetTransition(Transition.SawPlayer);
         }
     }
 
     public override void Act(GameObject player, GameObject npc)
     {
+        //Debug.Log("following path");
         // Follow the path of waypoints
         // Find the direction of the current way point 
         Vector3 vel = npc.GetComponent<Rigidbody>().velocity;
@@ -111,6 +115,7 @@ public class ChasePlayerState : FSMState
 
     public override void Act(GameObject player, GameObject npc)
     {
+        //Debug.Log("chasing player");
         // Follow the path of waypoints
         // Find the direction of the player 		
         Vector3 vel = npc.GetComponent<Rigidbody>().velocity;
