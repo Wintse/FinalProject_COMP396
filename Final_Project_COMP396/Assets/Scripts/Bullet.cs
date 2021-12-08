@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         var hit = collision.gameObject;
-        if (hit.tag == "Player")
+        if (hit.tag == "Player" || hit.tag == "NPC")
         {
             var health = hit.GetComponent<Health>();
             health.TakeDamage(maxDamageInflicted);

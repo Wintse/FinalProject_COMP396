@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 114182403561105604}
   m_Layer: 0
   m_Name: NPC
-  m_TagString: Player
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -260,6 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   angularSpeed: 60
+  enemyType: 2
 --- !u!1 &4643505970023621898
 GameObject:
   m_ObjectHideFlags: 0
