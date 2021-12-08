@@ -22,17 +22,19 @@ public class DoorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(xEnemies);
+        Debug.Log("x "+xEnemies);
         if (this.gameObject.tag == "DoorX")
         {
             DoorsMove(xEnemies);
 
         }
+        Debug.Log("y " + yEnemies);
         if (this.gameObject.tag == "DoorY")
         {
             DoorsMove(yEnemies);
 
         }
+        Debug.Log("z "+ zEnemies);
         if (this.gameObject.tag == "DoorZ")
         {
             DoorsMove(zEnemies);
@@ -47,7 +49,7 @@ public class DoorController : MonoBehaviour
 
     void DoorsMove(int type)
     {
-        if (type == 0)
+        if (type <= 0)
         {
             this.transform.position += new Vector3(0, 4 * Time.deltaTime, 0); ;
         }

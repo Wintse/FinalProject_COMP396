@@ -10,6 +10,7 @@ public class CountdownTimer : MonoBehaviour
     bool timerRunning = true;
     GameObject[] playersArray;
     public Image waitingScreen;
+    public Image victoryScreen;
     public PlayerController playerController;
 
     public Text countdownText;
@@ -18,6 +19,7 @@ public class CountdownTimer : MonoBehaviour
     {
         currentTime = levelTime;
         countdownText.text = currentTime.ToString("0");
+        victoryScreen.enabled = false;
     }
 
     //Update is called once per frame
@@ -52,6 +54,7 @@ public class CountdownTimer : MonoBehaviour
             Debug.Log("Player");
             timerRunning = false;
             countdownText.text = currentTime.ToString("0") + " You Win";
+            victoryScreen.enabled = true;
         }
     }
 }
