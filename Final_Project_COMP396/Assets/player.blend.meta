@@ -3,6 +3,33 @@ guid: 5e0361393d7b4b845b6ff21456a281f6
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
+    100000: Camera
+    100002: Empty
+    100004: Light
+    100006: //RootNode
+    100008: Roundcube
+    100010: Roundcube.001
+    100012: Roundcube.002
+    400000: Camera
+    400002: Empty
+    400004: Light
+    400006: //RootNode
+    400008: Roundcube
+    400010: Roundcube.001
+    400012: Roundcube.002
+    2000000: Camera
+    2100000: No Name
+    2300000: Roundcube
+    2300002: Roundcube.001
+    2300004: Roundcube.002
+    3300000: Roundcube
+    3300002: Roundcube.001
+    3300004: Roundcube.002
+    4300000: Roundcube
+    4300002: Roundcube.001
+    4300004: Roundcube.002
+    9500000: //RootNode
+    10800000: Light
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -57,7 +84,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
