@@ -9,6 +9,7 @@ TagManager:
   - DoorX
   - DoorY
   - DoorZ
+  - WaitingScreen
   layers:
   - Default
   - TransparentFX

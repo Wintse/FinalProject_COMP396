@@ -9,6 +9,7 @@ public class CountdownTimer : MonoBehaviour
     public float levelTime = 50f;
     bool timerRunning = true;
     GameObject[] playersArray;
+    public Image waitingScreen;
     public PlayerController playerController;
 
     public Text countdownText;
@@ -23,10 +24,16 @@ public class CountdownTimer : MonoBehaviour
     void Update()
     {
         playersArray = GameObject.FindGameObjectsWithTag("Player");
-
+        
+        if (playersArray.Length == 1)
+        {
+            waitingScreen.enabled = true;
+            //Debug.Log("HERRREEE");
+            //this.transform.position = new Vector3(this.transform.position.x,this.transform.position.;
+        }
         if (playersArray.Length > 1 && timerRunning)
         {
-
+            waitingScreen.enabled = false;
             currentTime -= 1 * Time.deltaTime;
             countdownText.GetComponent<Text>().text = currentTime.ToString("0");
         }

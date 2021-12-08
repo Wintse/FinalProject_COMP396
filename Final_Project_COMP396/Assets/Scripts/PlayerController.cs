@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
-
+using UnityEngine.UI;
 
 public class PlayerController : NetworkBehaviour
 {
     //bullet prefab
     [SerializeField]
     float speed = 15; // m/s
-    
+    GameObject[] playersArray;
     [SerializeField]
     float angularSpeed = 120; // deg/s  (3 sewc fopr a full turn=360 deg => 120 deg/s)
 
@@ -19,16 +19,15 @@ public class PlayerController : NetworkBehaviour
     public float bulletSpeed=30; // m/s
     public float bulletLife = 2; //sec
     public bool mainPlayer;
+    public Image waitingScreen;
 
     public override void OnStartLocalPlayer()
     {
         // base.OnStartLocalPlayer();
         //GetComponent<Renderer>().material.color = Color.blue;
         mainPlayer = true;
-        //Debug.Log("HERRREEE");
-        //this.transform.position = new Vector3(this.transform.position.x,this.transform.position.;
+        
     }
-
     // Start is called before the first frame update
     void Start()
     {
