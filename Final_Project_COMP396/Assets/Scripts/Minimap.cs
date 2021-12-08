@@ -18,7 +18,7 @@ public class Minimap : MonoBehaviour
 
         foreach (GameObject player in playersArray)
         {
-            if (player.name == "Player(Clone)")
+            if (player.name == "Frog(Clone)")
             {
                 mainPlayer = player;
                 Vector3 newPosition = mainPlayer.transform.position;

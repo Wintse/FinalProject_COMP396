@@ -17,11 +17,25 @@ public class NPCControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //path[0].position = this.transform.position * 5f;
-        Debug.Log(path[0].position);
-        //Debug.Log(path[0].position * 5f);
-        path[1].position = this.transform.position;
-        Debug.Log(this.transform.position.x);
+
+
+        //Debug.Log(this.transform.position);
+        //Debug.Log(this.transform.localPosition * 2f);
+
+        //path[0].position = this.transform.localPosition + new Vector3(3f, 0f, 0f);
+        //path[1].position = this.transform.localPosition + new Vector3(-3f, 0f, 0f);
+
+        //path[0].position = new Vector3 (this.transform.position.x + 2f, this.transform.position.y, this.transform.position.z);
+        //path[1].position = this.transform.position + new Vector3(-3f, 0f, 0f);
+
+        //Debug.Log(this.transform.localPosition + new Vector3(3f, 0f, 0f));
+        //Debug.Log(path[0].position);
+        //Debug.Log(path[1].position);
+
+        //Debug.Log(new Vector3(this.transform.position.x + 2f, this.transform.position.y, this.transform.position.z));
+
+
+        
 
         MakeFSM();
     }
