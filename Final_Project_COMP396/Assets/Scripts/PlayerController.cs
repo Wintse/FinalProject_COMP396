@@ -18,11 +18,14 @@ public class PlayerController : NetworkBehaviour
     public Transform bulletSpawn;
     public float bulletSpeed=6; // m/s
     public float bulletLife = 2; //sec
+    public bool mainPlayer;
 
     public override void OnStartLocalPlayer()
     {
         // base.OnStartLocalPlayer();
         GetComponent<Renderer>().material.color = Color.blue;
+        mainPlayer = true;
+
         //this.transform.position = new Vector3(this.transform.position.x,this.transform.position.;
     }
 
