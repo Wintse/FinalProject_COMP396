@@ -27,12 +27,14 @@ public class CountdownTimer : MonoBehaviour
         
         if (playersArray.Length == 1)
         {
+            Time.timeScale = 0;
             waitingScreen.enabled = true;
             //Debug.Log("HERRREEE");
             //this.transform.position = new Vector3(this.transform.position.x,this.transform.position.;
         }
         if (playersArray.Length > 1 && timerRunning)
         {
+            Time.timeScale = 1;
             waitingScreen.enabled = false;
             currentTime -= 1 * Time.deltaTime;
             countdownText.GetComponent<Text>().text = currentTime.ToString("0");
