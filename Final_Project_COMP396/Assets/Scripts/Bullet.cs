@@ -8,7 +8,12 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        var hit = collision.gameObject;
+       
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        var hit = other.gameObject;
         if (hit.tag == "Player" || hit.tag == "NPC")
         {
             var health = hit.GetComponent<Health>();
