@@ -444,7 +444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   angularSpeed: 60
-  enemyType: 0
+  enemyType: 2
 --- !u!1 &4577195222367338351
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +456,7 @@ GameObject:
   - component: {fileID: 7743442108705241139}
   - component: {fileID: 5803553760876685980}
   - component: {fileID: 5017001568539311160}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 4140035957626118004}
   - component: {fileID: 5739952402241719783}
   - component: {fileID: 4633474177937150709}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -602,7 +602,7 @@ GameObject:
   - component: {fileID: 678715287364825432}
   - component: {fileID: 1335343497111926753}
   - component: {fileID: 4430505419450875122}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HealthbarCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

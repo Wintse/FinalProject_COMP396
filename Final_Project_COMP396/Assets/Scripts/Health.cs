@@ -9,7 +9,8 @@ public class Health : NetworkBehaviour
 {
 
     public const int maxHealth = 100;
-
+    DoorController doorController;
+    GameObject[] xDoors, yDoors, zDoors;
     //Newer implementations use templates
     //NetworkVariable<int> currentHealth
 
@@ -31,8 +32,44 @@ public class Health : NetworkBehaviour
         currentHealth -= damage;
         if (currentHealth <=0)
         {
-            currentHealth = maxHealth;
-            RpcReSpawn();
+            if (this.tag == "NPC")
+            {
+                NPCController npcController = this.GetComponent<NPCController>();
+                if (npcController.enemyType == EnemyType.x)
+                {
+                    xDoors = GameObject.FindGameObjectsWithTag("DoorX");
+                    foreach (GameObject door in xDoors)
+                    {
+                        doorController = door.GetComponent<DoorController>();
+                        doorController.xEnemies -= 1;
+                    }
+                }
+                if (npcController.enemyType == EnemyType.y)
+                {
+                    yDoors = GameObject.FindGameObjectsWithTag("DoorY");
+                    foreach (GameObject door in yDoors)
+                    {
+                        doorController = door.GetComponent<DoorController>();
+                        doorController.yEnemies -= 1;
+                    }
+                }
+                if (npcController.enemyType == EnemyType.z)
+                {
+                    zDoors = GameObject.FindGameObjectsWithTag("DoorZ");
+                    foreach (GameObject door in zDoors)
+                    {
+                        doorController = door.GetComponent<DoorController>();
+                        doorController.zEnemies -= 1;
+                    }
+                } 
+                Destroy(this.gameObject);
+            } else
+            {
+                currentHealth = maxHealth;
+                RpcReSpawn();
+            }
+           
+           
             //Debug.Log("Player" + this.gameObject.GetInstanceID() + " is dead!");
         }
         Debug.Log("Player" + this.gameObject.GetInstanceID() + ": Health=" + currentHealth);

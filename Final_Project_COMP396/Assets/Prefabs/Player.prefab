@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1161493335}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LookAt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 1750598902}
   - component: {fileID: 1750598901}
   - component: {fileID: 1750598900}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HealthbarCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 2075123060}
   - component: {fileID: 2075123062}
   - component: {fileID: 2075123061}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5084230958926016248}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 7500115554189581726}
   - component: {fileID: 330744465515103273}
   - component: {fileID: 917970331605308355}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 8591862447517157645}
   - component: {fileID: 6694464880901164288}
   - component: {fileID: 3977745705292915310}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 114599807935355378}
   - component: {fileID: 494451702622158345}
   - component: {fileID: 54471648972752866}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -528,12 +528,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa7bae697b9e8245a8942e522a2bfdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 15
   angularSpeed: 120
   bulletPrefab: {fileID: 7046786638301511019, guid: cec95322c83671441a643ae578e46984,
     type: 3}
   bulletSpawn: {fileID: 5084230958926016248}
-  bulletSpeed: 10
+  bulletSpeed: 30
   bulletLife: 2
   mainPlayer: 0
 --- !u!114 &114599807935355378
@@ -600,7 +600,7 @@ GameObject:
   - component: {fileID: 6888734017627477898}
   - component: {fileID: 6888734017627477899}
   - component: {fileID: 6888734017627477896}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -8,7 +8,7 @@ public class PlayerController : NetworkBehaviour
 {
     //bullet prefab
     [SerializeField]
-    float speed = 3; // m/s
+    float speed = 15; // m/s
     
     [SerializeField]
     float angularSpeed = 120; // deg/s  (3 sewc fopr a full turn=360 deg => 120 deg/s)
@@ -16,7 +16,7 @@ public class PlayerController : NetworkBehaviour
     //New as of Nov29th
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
-    public float bulletSpeed=6; // m/s
+    public float bulletSpeed=30; // m/s
     public float bulletLife = 2; //sec
     public bool mainPlayer;
 
