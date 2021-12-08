@@ -17,6 +17,12 @@ public class NPCControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //path[0].position = this.transform.position * 5f;
+        Debug.Log(path[0].position);
+        //Debug.Log(path[0].position * 5f);
+        path[1].position = this.transform.position;
+        Debug.Log(this.transform.position.x);
+
         MakeFSM();
     }
 
@@ -60,7 +66,7 @@ public class FollowPathState : FSMState
         if (Physics.Raycast(npc.transform.position, npc.transform.forward, out hit, 15F))
         {
             if (hit.transform.gameObject.tag == "Player")
-                Debug.Log("hit player");
+                //Debug.Log("hit player");
                 npc.GetComponent<NPCControl>().SetTransition(Transition.SawPlayer);
         }
     }
@@ -115,7 +121,7 @@ public class ChasePlayerState : FSMState
 
     public override void Act(GameObject player, GameObject npc)
     {
-        //Debug.Log("chasing player");
+        Debug.Log("chasing player");
         // Follow the path of waypoints
         // Find the direction of the player 		
         Vector3 vel = npc.GetComponent<Rigidbody>().velocity;

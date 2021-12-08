@@ -25,7 +25,7 @@ public class PlayerController : NetworkBehaviour
         // base.OnStartLocalPlayer();
         //GetComponent<Renderer>().material.color = Color.blue;
         mainPlayer = true;
-        Debug.Log("HERRREEE");
+        //Debug.Log("HERRREEE");
         //this.transform.position = new Vector3(this.transform.position.x,this.transform.position.;
     }
 

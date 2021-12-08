@@ -38,7 +38,7 @@ public class CameraController : MonoBehaviour
                 //Debug.Log(playerController.mainPlayer);
 
                 var vcam = GetComponent<CinemachineFreeLook>();
-                Debug.Log(playerController.mainPlayer);
+                //Debug.Log(playerController.mainPlayer);
                 if (playerController.mainPlayer)
                 {
                     lookAt = player.transform.GetChild(7).gameObject;

@@ -1711,10 +1711,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acca39f2ad934b4489cdbcbab292410a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 6888734016520140071, guid: 67a564c54b4c55e42850df92e362deb0, type: 3}
+  player: {fileID: 8240830141596479543, guid: 167c820207a047a4c94bcae843239e2b, type: 3}
   path:
   - {fileID: 500045006}
-  - {fileID: 1184154131}
+  - {fileID: 0}
 --- !u!54 &368096897
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1966,7 +1966,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 50
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -1974,7 +1974,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7316637, y: 1}
+    m_SensorSize: {x: 1.1813644, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2484,7 +2484,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 50
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -2492,7 +2492,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7316637, y: 1}
+    m_SensorSize: {x: 1.1813644, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2589,7 +2589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 14, z: -4}
+  m_FollowOffset: {x: 0, y: 30, z: 0}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -2773,7 +2773,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 50
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -4542,7 +4542,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 50
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -4550,7 +4550,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7316637, y: 1}
+    m_SensorSize: {x: 1.1813644, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6292,7 +6292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 14, z: -4}
+  m_FollowOffset: {x: 0, y: 30, z: 0}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -6418,7 +6418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 14, z: -4}
+  m_FollowOffset: {x: 0, y: 30, z: 0}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -6665,7 +6665,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_CommonLens: 1
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 50
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -6673,7 +6673,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7316637, y: 1}
+    m_SensorSize: {x: 1.1813644, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6736,12 +6736,12 @@ MonoBehaviour:
   m_BindingMode: 4
   m_SplineCurvature: 0.2
   m_Orbits:
-  - m_Height: 14
-    m_Radius: 4
-  - m_Height: 2
-    m_Radius: 5
-  - m_Height: 0.4
-    m_Radius: 2
+  - m_Height: 30
+    m_Radius: 0
+  - m_Height: 0
+    m_Radius: 0
+  - m_Height: 0
+    m_Radius: 0
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
   - {fileID: 843995686}
@@ -8105,8 +8105,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1448641892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 89.04, y: 4.5, z: 107.2}
-  m_LocalScale: {x: 5, y: 0.2, z: 3}
+  m_LocalPosition: {x: 89.04, y: 0.09, z: 107.2}
+  m_LocalScale: {x: 10, y: 0.2, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 16
@@ -8947,10 +8947,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (testing)
       objectReference: {fileID: 0}
+    - target: {fileID: 4643505970023621897, guid: 457b9a5eb7bd99140bb96bcd39ea5388,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4643505970023621909, guid: 457b9a5eb7bd99140bb96bcd39ea5388,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.3
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 4643505970023621909, guid: 457b9a5eb7bd99140bb96bcd39ea5388,
         type: 3}
@@ -9691,7 +9696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7fa74fee6fb34642bf166e8cc19060b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcPrefab: {fileID: 4643505970023621897, guid: 457b9a5eb7bd99140bb96bcd39ea5388,
+  npcPrefab: {fileID: 4109767492781432823, guid: 9a933ae38dc82bf43bbbe6a51bd74081,
     type: 3}
   numOfNPCs: 5
   spawnX:
