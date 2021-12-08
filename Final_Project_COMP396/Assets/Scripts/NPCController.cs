@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+public enum EnemyType { x,y,z};
 
 public class NPCController : NetworkBehaviour
 {
     //bullet prefab
     public float speed = 1; // m/s
     public float angularSpeed = 60; // deg/s  (3 sewc fopr a full turn=360 deg => 120 deg/s)
+    public EnemyType enemyType;
+    
 
     //New as of Nov29th
     //public GameObject bulletPrefab;
@@ -28,34 +31,26 @@ public class NPCController : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //enemyType = EnemyType.x;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (!this.isLocalPlayer)
-        //{
-        //    return; //we handleonly local player commands
-        //}
-
-        //local player; handle inputs
-        //var h = Input.GetAxis("Horizontal"); // h is in [-1,1]
-        //var v = Input.GetAxis("Vertical");   // v is in [-1,1]
-        //transform.Rotate(0, h * Time.deltaTime * angularSpeed, 0);//abrupt rotation
-        //transform.Translate(0, 0, v * Time.deltaTime * speed);
-        //float f = Input.GetAxis("Fire1");
-        //if (f > 0.9) { 
-        //   print("f=" + f);
-        //}
-        //if (Input.GetAxis("Fire1"))
-        //{
-
-        //}
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    CmdFire();
-        //}
+        switch (enemyType)
+        {
+            case EnemyType.x:
+                Debug.Log(enemyType);
+                break;
+            case EnemyType.y:
+                Debug.Log(enemyType);
+                break;
+            case EnemyType.z:
+                Debug.Log(enemyType);
+                break;
+            default:
+                break;
+        }
 
 
     }

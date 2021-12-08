@@ -527,7 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa7bae697b9e8245a8942e522a2bfdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 7
   angularSpeed: 120
   bulletPrefab: {fileID: 7046786638301511019, guid: cec95322c83671441a643ae578e46984,
     type: 3}
