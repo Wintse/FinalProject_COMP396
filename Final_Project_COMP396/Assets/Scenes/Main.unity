@@ -20,9 +20,9 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1, g: 0.5704549, b: 0.2783019, a: 1}
-  m_AmbientEquatorColor: {r: 1, g: 0, b: 0.4774933, a: 1}
-  m_AmbientGroundColor: {r: 0.18640977, g: 0.5566038, b: 0.5232349, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 0.4481132, b: 0.84272236, a: 1}
+  m_AmbientEquatorColor: {r: 0.8396226, g: 0.19251019, b: 0.11485406, a: 1}
+  m_AmbientGroundColor: {r: 0.18823528, g: 0.4711985, b: 0.5568628, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44300318, g: 0.49219626, b: 0.57192606, a: 1}
+  m_IndirectSpecularColor: {r: 0.8357645, g: 0.9278853, b: 0.98533076, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -88,7 +88,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 3d0858c3f4f571744ad85086846b7f0f,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -877,7 +878,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 0.8754725, b: 0.39999998, a: 1}
   m_Intensity: 1
   m_Range: 20
   m_SpotAngle: 30
