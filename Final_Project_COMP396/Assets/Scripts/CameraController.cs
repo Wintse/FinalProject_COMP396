@@ -14,7 +14,8 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        var vcam = GetComponent<CinemachineFreeLook>();
+        vcam.GetComponent<Cinemachine.CinemachineBrain>().enabled = false;
 
 
         
@@ -34,13 +35,16 @@ public class CameraController : MonoBehaviour
             
             if(player.name == "Frog(Clone)")
             {
+                var vcam = GetComponent<CinemachineFreeLook>();
+                vcam.GetComponent<Cinemachine.CinemachineBrain>().enabled = true;
                 playerController = player.GetComponent<PlayerController>();
                 //Debug.Log(playerController.mainPlayer);
 
-                var vcam = GetComponent<CinemachineFreeLook>();
+                
                 //Debug.Log(playerController.mainPlayer);
                 if (playerController.mainPlayer)
                 {
+                    
                     lookAt = player.transform.GetChild(7).gameObject;
                     vcam.GetComponent<Cinemachine.CinemachineFreeLook>().Follow = player.transform;
                     vcam.GetComponent<Cinemachine.CinemachineFreeLook>().LookAt = lookAt.transform;
