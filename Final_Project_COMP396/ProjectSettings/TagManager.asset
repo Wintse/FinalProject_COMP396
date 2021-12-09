@@ -10,6 +10,7 @@ TagManager:
   - DoorY
   - DoorZ
   - WaitingScreen
+  - EndPlatform
   layers:
   - Default
   - TransparentFX
