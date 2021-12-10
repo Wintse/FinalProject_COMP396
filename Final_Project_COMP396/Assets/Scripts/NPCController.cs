@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public enum EnemyType { x,y,z};
+public enum EnemyType { x, y, z };
 
 public class NPCController : NetworkBehaviour
 {
@@ -11,7 +11,7 @@ public class NPCController : NetworkBehaviour
     public float speed = 1; // m/s
     public float angularSpeed = 60; // deg/s  (3 sewc fopr a full turn=360 deg => 120 deg/s)
     public EnemyType enemyType;
-    
+
 
     //New as of Nov29th
     //public GameObject bulletPrefab;

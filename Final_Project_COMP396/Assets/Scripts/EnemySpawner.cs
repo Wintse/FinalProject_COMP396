@@ -11,7 +11,7 @@ public class EnemySpawner : NetworkBehaviour
 
     NPCController npcController;
 
-    public Transform[] spawnX = new Transform[5];
+    public Transform[] spawnX = new Transform[3];
     public Transform[] spawnY = new Transform[5];
     public Transform[] spawnZ = new Transform[5];
 
@@ -19,11 +19,11 @@ public class EnemySpawner : NetworkBehaviour
     {
         npcController = npcPrefab.GetComponent<NPCController>();
 
-        GameObject plane=GameObject.Find("Plane");
+        GameObject plane = GameObject.Find("Plane");
         float size = plane.transform.localScale.x * 5;
         int spawnCounter = 0;
 
-        for(int i = 0; i < numOfNPCs; i++)
+        for (int i = 0; i < spawnX.Length; i++)
         {
             float x = Random.RandomRange(-size, size);
             float z = Random.RandomRange(-size, size);
@@ -43,8 +43,9 @@ public class EnemySpawner : NetworkBehaviour
         }
 
         spawnCounter = 0;
-        for (int i = 0; i < numOfNPCs; i++)
+        for (int i = 0; i < spawnY.Length; i++)
         {
+            Debug.Log("yy");
             float x = Random.RandomRange(-size, size);
             float z = Random.RandomRange(-size, size);
 
@@ -63,7 +64,7 @@ public class EnemySpawner : NetworkBehaviour
         }
 
         spawnCounter = 0;
-        for (int i = 0; i < numOfNPCs; i++)
+        for (int i = 0; i < spawnZ.Length; i++)
         {
             float x = Random.RandomRange(-size, size);
             float z = Random.RandomRange(-size, size);

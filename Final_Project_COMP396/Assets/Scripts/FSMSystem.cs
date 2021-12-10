@@ -53,7 +53,9 @@ public enum Transition
 {
     NullTransition = 0, // Use this transition to represent a non-existing transition in your system
     SawPlayer,
-    LostPlayer
+    LostPlayer,
+    NoPlayer,
+    Attack
 }
 
 /// <summary>
@@ -64,7 +66,9 @@ public enum StateID
 {
     NullStateID = 0, // Use this ID to represent a non-existing State in your system	
     FollowingPath,
-    ChasingPlayer
+    ChasingPlayer,
+    AttackPlayer,
+    Idle
 }
 
 /// <summary>
@@ -75,8 +79,9 @@ public enum StateID
 /// Method Reason is used to determine which transition should be fired .
 /// Method Act has the code to perform the actions the NPC is supposed do if it's on this state.
 /// </summary>
-public abstract class FSMState
+public abstract class FSMState : MonoBehaviour
 {
+
     protected Dictionary<Transition, StateID> map = new Dictionary<Transition, StateID>();
     protected StateID stateID;
     public StateID ID { get { return stateID; } }

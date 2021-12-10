@@ -11,6 +11,8 @@ public class Health : NetworkBehaviour
     public const int maxHealth = 100;
     DoorController doorController;
     GameObject[] xDoors, yDoors, zDoors;
+    public GameObject heartPrefab;
+    public Transform heartSpwan;
     //Newer implementations use templates
     //NetworkVariable<int> currentHealth
 
@@ -21,6 +23,10 @@ public class Health : NetworkBehaviour
     //UI related
     public RectTransform healthBar;
 
+    private void FixedUpdate()
+    {
+
+    }
     public void TakeDamage(int damage)
     {
 
@@ -30,10 +36,11 @@ public class Health : NetworkBehaviour
         }
 
         currentHealth -= damage;
-        if (currentHealth <=0)
+        if (currentHealth <= 0)
         {
             if (this.tag == "NPC")
             {
+
                 NPCController npcController = this.GetComponent<NPCController>();
                 if (npcController.enemyType == EnemyType.x)
                 {
@@ -61,15 +68,20 @@ public class Health : NetworkBehaviour
                         doorController = door.GetComponent<DoorController>();
                         doorController.zEnemies -= 1;
                     }
-                } 
+                }
+                Debug.Log("frog");
+                var heart = Instantiate(heartPrefab, heartSpwan.position, Quaternion.identity);
+                NetworkServer.Spawn(heart);
                 Destroy(this.gameObject);
-            } else
+
+            }
+            else
             {
                 currentHealth = maxHealth;
                 RpcReSpawn();
             }
-           
-           
+
+
             //Debug.Log("Player" + this.gameObject.GetInstanceID() + " is dead!");
         }
         Debug.Log("Player" + this.gameObject.GetInstanceID() + ": Health=" + currentHealth);
@@ -80,7 +92,8 @@ public class Health : NetworkBehaviour
     private void RpcReSpawn()
     {
         //throw new NotImplementedException();
-        transform.position = Vector3.zero;
+        transform.position = PlayerController.pos;
+
     }
 
     void OnChangeHealth(int health)
