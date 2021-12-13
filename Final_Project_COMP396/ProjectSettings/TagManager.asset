@@ -11,6 +11,9 @@ TagManager:
   - DoorZ
   - WaitingScreen
   - EndPlatform
+  - Heart
+  - p1 cam
+  - p2 cam
   layers:
   - Default
   - TransparentFX
@@ -23,8 +26,8 @@ TagManager:
   - PostProcessing
   - Bullet
   - Player
-  - 
-  - 
+  - P1 Camera
+  - P2 Camera
   - 
   - 
   - 

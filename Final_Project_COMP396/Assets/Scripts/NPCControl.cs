@@ -46,32 +46,35 @@ public class NPCControl : NetworkBehaviour
     {
         //player = GameObject.FindWithTag("Player");
         players = GameObject.FindGameObjectsWithTag("Player");
-        players[0].transform.GetChild(1).GetComponent<MeshRenderer>().material.color = Color.blue;
-        // players[0].GetComponent<Text>().text = "You";
-        players[1].transform.GetChild(1).GetComponent<MeshRenderer>().material.color = Color.yellow;
-        //  players[1].GetComponent<Text>().text = "Player 2";
-        if (Physics.Raycast(this.transform.position, this.transform.forward, out hit1, 15F))
+        if (players.Length == 2)
         {
-            if (hit1.transform.gameObject.tag == "Player" && setPatrolingStatus.inPatroling && hit1.transform.GetChild(1).GetComponent<MeshRenderer>().material.color == Color.yellow)
+            players[0].transform.GetChild(1).GetComponent<MeshRenderer>().material.color = Color.blue;
+            // players[0].GetComponent<Text>().text = "You";
+            players[1].transform.GetChild(1).GetComponent<MeshRenderer>().material.color = Color.yellow;
+            //  players[1].GetComponent<Text>().text = "Player 2";
+            if (Physics.Raycast(this.transform.position, this.transform.forward, out hit1, 15F))
             {
-                player = players[1];
+                if (hit1.transform.gameObject.tag == "Player" && setPatrolingStatus.inPatroling && hit1.transform.GetChild(1).GetComponent<MeshRenderer>().material.color == Color.yellow)
+                {
+                    player = players[1];
+                }
+                else if (hit1.transform.gameObject.tag == "Player" && setPatrolingStatus.inPatroling && hit1.transform.GetChild(1).GetComponent<MeshRenderer>().material.color != Color.yellow)
+                {
+                    player = players[0];
+                    //Debug.Log("Palyer 2 hit");
+                }
             }
-            else if (hit1.transform.gameObject.tag == "Player" && setPatrolingStatus.inPatroling && hit1.transform.GetChild(1).GetComponent<MeshRenderer>().material.color != Color.yellow)
+            fsm.CurrentState.Reason(player, gameObject);
+            fsm.CurrentState.Act(player, gameObject);
+            if (this.GetComponent<Rigidbody>().velocity == new Vector3(0, 0, 0))
             {
-                player = players[0];
-                //Debug.Log("Palyer 2 hit");
+                if (Time.frameCount % 20 == 0)
+                {
+                    CmdFire();
+                }
             }
-        }
-        fsm.CurrentState.Reason(player, gameObject);
-        fsm.CurrentState.Act(player, gameObject);
-        if (this.GetComponent<Rigidbody>().velocity == new Vector3(0, 0, 0))
-        {
-            if (Time.frameCount % 20 == 0)
-            {
-                CmdFire();
-            }
-        }
 
+        }
     }
 
     private void MakeFSM()
@@ -105,8 +108,8 @@ public class NPCControl : NetworkBehaviour
         NetworkServer.Spawn(bullet);
         Destroy(bullet, bulletLife);
     }
-
 }
+
 
 public class FollowPathState : FSMState
 {
