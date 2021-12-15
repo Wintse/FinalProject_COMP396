@@ -28,7 +28,7 @@ public class NPCControl : NetworkBehaviour
     private FSMSystem fsm;
     private int count = 0;
     public static Vector3 velo;
-
+    public AudioClip collectSound;
 
 
     PlayerController playerController;
@@ -49,9 +49,9 @@ public class NPCControl : NetworkBehaviour
         if (players.Length == 2)
         {
             players[0].transform.GetChild(1).GetComponent<MeshRenderer>().material.color = Color.blue;
-            // players[0].GetComponent<Text>().text = "You";
+           //  players[0].GetComponent<Text>().text = "You";
             players[1].transform.GetChild(1).GetComponent<MeshRenderer>().material.color = Color.yellow;
-            //  players[1].GetComponent<Text>().text = "Player 2";
+           //  players[1].GetComponent<Text>().text = "Player 2";
             if (Physics.Raycast(this.transform.position, this.transform.forward, out hit1, 15F))
             {
                 if (hit1.transform.gameObject.tag == "Player" && setPatrolingStatus.inPatroling && hit1.transform.GetChild(1).GetComponent<MeshRenderer>().material.color == Color.yellow)
@@ -70,6 +70,8 @@ public class NPCControl : NetworkBehaviour
             {
                 if (Time.frameCount % 20 == 0)
                 {
+                    if (collectSound)
+                        AudioSource.PlayClipAtPoint(collectSound, bulletSpawn.position);
                     CmdFire();
                 }
             }

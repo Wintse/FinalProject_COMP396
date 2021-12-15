@@ -222,7 +222,8 @@ MonoBehaviour:
   CollectibleType: 0
   rotate: 1
   rotationSpeed: 50
-  collectSound: {fileID: 0}
+  collectSound: {fileID: 8300000, guid: 08c29d65cba2ce34b8a81be416b9ecc7, type: 3}
+  frog: {fileID: 8300000, guid: 9022bc9595306f9449130404b1eddf26, type: 3}
   collectEffect: {fileID: 1702657300312902, guid: a45c51da10cf1a84abc6a99c06951e3f,
     type: 3}
 --- !u!114 &4209289472055781270

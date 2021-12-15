@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
-public class CountdownTimer : MonoBehaviour
+public class CountdownTimer : NetworkBehaviour
 {
     float currentTime = 0f;
     public float levelTime = 50f;
@@ -12,7 +13,8 @@ public class CountdownTimer : MonoBehaviour
     public Image waitingScreen;
     public Image victoryScreen;
     public PlayerController playerController;
-
+  public static  bool playerOnPlatform;
+    public static int door=0;
     public Text countdownText;
     //Start is called before the first frame update
     void Start()
@@ -21,7 +23,6 @@ public class CountdownTimer : MonoBehaviour
         countdownText.text = currentTime.ToString("0");
         victoryScreen.enabled = false;
     }
-
     //Update is called once per frame
     void Update()
     {
@@ -46,17 +47,63 @@ public class CountdownTimer : MonoBehaviour
             timerRunning = false;
             countdownText.text = "Game Over";
         }
+       
+        
     }
-
+    [Command]
+    void CmdlevelTxt (string txt)
+    {
+        GameObject.FindGameObjectWithTag("openlevel2").GetComponent<levelTxt>().txt = txt;
+            GameObject.FindGameObjectWithTag("openlevel2").GetComponent<levelTxt>().text.text = GameObject.FindGameObjectWithTag("openlevel2").GetComponent<levelTxt>().txt;
+    }
     void OnTriggerEnter(Collider collider)
     {
         Debug.Log("Triggered");
+        
         if (collider.CompareTag("Player"))
         {
+            if (this.gameObject.tag == "level1gate")
+            {
+                playerOnPlatform = true;
+                door = 1;
+                CmdlevelTxt("Press F to Enter Level 2");
+                Debug.Log("Player");
+                timerRunning = false;
+                countdownText.text = currentTime.ToString("0") + " You Win";
+                victoryScreen.enabled = true;
+            }
+           else if (this.gameObject.tag == "level2gate")
+            {
+                playerOnPlatform = true;
+                door = 2;
+                CmdlevelTxt("Press F to Enter Level 3");
+                Debug.Log("Player");
+                timerRunning = false;
+                countdownText.text = currentTime.ToString("0") + " You Win";
+                victoryScreen.enabled = true;
+            }
+            else if (this.gameObject.tag == "level3gate")
+            {
+                playerOnPlatform = true;
+                door = 3;
+                CmdlevelTxt("You Win!!");
+                Debug.Log("Player");
+                timerRunning = false;
+                countdownText.text = currentTime.ToString("0") + " You Win";
+                victoryScreen.enabled = true;
+            }
+        }
+    }
+    void OnTriggerExit(Collider collider)
+    {
+        Debug.Log("Triggered");
+        if (collider.CompareTag("Player"))
+        {  
+            
+            playerOnPlatform = false;
+            CmdlevelTxt("");
             Debug.Log("Player");
-            timerRunning = false;
-            countdownText.text = currentTime.ToString("0") + " You Win";
-            victoryScreen.enabled = true;
+           
         }
     }
 }

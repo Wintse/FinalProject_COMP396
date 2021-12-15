@@ -8,7 +8,24 @@ public class Bullet : NetworkBehaviour
     public int maxDamageInflicted = 20;
     public GameObject enemyHealth;
     Transform topparent;
-
+    public GameObject collectEffect;
+    GameObject effect;
+    private void Start()
+    {
+       
+    }
+    private void Update()
+    {
+        if (collectEffect)
+        {
+            effect = Instantiate(collectEffect, transform.position, Quaternion.identity);
+            
+        }
+    }
+    void destroyEffect()
+    {
+        Destroy(this.effect);
+    }
     private void OnCollisionEnter(Collision collision)
     {
 
@@ -30,7 +47,7 @@ public class Bullet : NetworkBehaviour
                 health.TakeDamage(maxDamageInflicted);
             }
         }
-
+        destroyEffect();
         Destroy(this.gameObject);
     }
 }

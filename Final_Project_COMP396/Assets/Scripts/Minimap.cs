@@ -5,7 +5,7 @@ using UnityEngine;
 public class Minimap : MonoBehaviour
 {
     public GameObject mainPlayer;
-    GameObject[] playersArray;
+    GameObject player;
     public PlayerController playerController;
 
     void Start()
@@ -14,12 +14,9 @@ public class Minimap : MonoBehaviour
     }
     void LateUpdate()
     {
-        playersArray = GameObject.FindGameObjectsWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Local");
 
-        foreach (GameObject player in playersArray)
-        {
-            if (player.name == "Frog(Clone)")
-            {
+  
                 mainPlayer = player;
                 Vector3 newPosition = mainPlayer.transform.position;
                 newPosition.y = transform.position.y;
@@ -27,8 +24,8 @@ public class Minimap : MonoBehaviour
 
                 transform.rotation = Quaternion.Euler(90f, mainPlayer.transform.eulerAngles.y, 0f);
 
-            }
-        }
+            
+        
 
     }
 }

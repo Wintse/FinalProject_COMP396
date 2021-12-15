@@ -15,7 +15,6 @@ public class Health : NetworkBehaviour
     public Transform heartSpwan;
     //Newer implementations use templates
     //NetworkVariable<int> currentHealth
-
     [SyncVar(hook = "OnChangeHealth")]
     public int currentHealth = maxHealth;
     // Start is called before the first frame update
@@ -40,7 +39,7 @@ public class Health : NetworkBehaviour
         {
             if (this.tag == "NPC")
             {
-
+               
                 NPCController npcController = this.GetComponent<NPCController>();
                 if (npcController.enemyType == EnemyType.x)
                 {
@@ -69,33 +68,32 @@ public class Health : NetworkBehaviour
                         doorController.zEnemies -= 1;
                     }
                 }
-                Debug.Log("frog");
-                var heart = Instantiate(heartPrefab, heartSpwan.position, Quaternion.identity);
-                NetworkServer.Spawn(heart);
-                Destroy(this.gameObject);
-
+                heart();
+         
             }
             else
             {
                 currentHealth = maxHealth;
                 RpcReSpawn();
             }
-
-
             //Debug.Log("Player" + this.gameObject.GetInstanceID() + " is dead!");
         }
         Debug.Log("Player" + this.gameObject.GetInstanceID() + ": Health=" + currentHealth);
-
     }
+    void heart()
+    {
+        Debug.Log("frog");
+        var heart = Instantiate(heartPrefab, heartSpwan.position, Quaternion.identity);
 
+        NetworkServer.Spawn(heart);
+        Destroy(this.gameObject);
+    }
     [ClientRpc]
     private void RpcReSpawn()
     {
         //throw new NotImplementedException();
         transform.position = PlayerController.pos;
-
     }
-
     void OnChangeHealth(int health)
     {
         healthBar.sizeDelta = new Vector2(health, healthBar.sizeDelta.y);

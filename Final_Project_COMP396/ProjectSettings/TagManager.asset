@@ -14,6 +14,18 @@ TagManager:
   - Heart
   - p1 cam
   - p2 cam
+  - ring
+  - Score
+  - level2door
+  - openlevel2
+  - openlevel3
+  - level3door
+  - level1gate
+  - level2gate
+  - level3gate
+  - finallevel
+  - Local
+  - player2
   layers:
   - Default
   - TransparentFX

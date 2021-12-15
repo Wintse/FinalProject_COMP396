@@ -181,3 +181,4 @@ MonoBehaviour:
   maxDamageInflicted: 20
   enemyHealth: {fileID: 5881009630378178954, guid: e8b2d67d0ef928b4e82cd268a818cff3,
     type: 3}
+  collectEffect: {fileID: 0}
